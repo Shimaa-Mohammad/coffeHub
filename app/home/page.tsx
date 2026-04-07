@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 function HomePage() {
  return (
-  <div className="relative flex flex-col md:flex-row items-center justify-between gap-10 min-h-[90vh] px-8 md:px-16 py-12 overflow-hidden">
+  <div className="relative flex flex-col md:flex-row items-center justify-between gap-10 min-h-[90vh] px-8 md:px-16 py-12 overflow-hidden bg-cyan-50">
     
     {/* Background glow */}
     <div className="absolute inset-0 pointer-events-none">
@@ -17,7 +17,7 @@ function HomePage() {
     <div className="relative z-10 flex flex-col items-start gap-6 max-w-xl">
       <h1 className="text-5xl md:text-6xl font-bold leading-tight tracking-tight text-stone-900">
         Discover the{" "}
-        <span className="text-amber-700">best drinks</span>{" "}
+        <span className="text-teal-800">best drinks</span>{" "}
         near you ☕
       </h1>
       <p className="text-zinc-400 text-lg leading-relaxed">
@@ -25,10 +25,10 @@ function HomePage() {
       </p>
 
       <div className="flex items-center gap-4 mt-2">
-        <Link href="/menue" className="px-6 py-3 text-amber-50 hover:text-amber-900 bg-amber-700 hover:bg-amber-300  font-semibold rounded-sm transition-all duration-200 shadow-lg shadow-amber-500/20 hover:shadow-amber-400/30 hover:-translate-y-0.5">
+        <Link href="/menue" className="px-6 py-3 bg-teal-400 hover:bg-teal-300 text-teal-950 font-semibold rounded-sm transition-all duration-200 shadow-lg shadow-amber-500/20 hover:shadow-amber-400/30 hover:-translate-y-0.5">
           Browse Menu Now
         </Link>
-        <button className="px-6 py-3 border border-amber-700 hover:border-amber-400/50 text-amber-300 hover:text-amber-400 font-semibold rounded-sm transition-all duration-200 hover:-translate-y-0.5">
+        <button className="px-6 py-3 border border-teal-700 hover:border-teal-400/50 text-teal-300 hover:text-teal-400 font-semibold rounded-sm transition-all duration-200 hover:-translate-y-0.5">
           Learn More
         </button>
       </div>
