@@ -3,6 +3,10 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/Footer";
+import { CartProvider } from "@/context/CartContext";
+import {Toaster} from "react-hot-toast"
+import { WishlistContext, WishlistProvider } from "@/context/WishlistContext";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -32,9 +36,14 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar/>
-        {children}
-        
+        <Toaster position="top-center" />
+       <CartProvider>
+        <WishlistProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </WishlistProvider>
+        </CartProvider>
       </body>
     </html>
     

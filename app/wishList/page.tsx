@@ -1,12 +1,13 @@
-import { Drink, DrinksResponse } from "@/types/drinks";
-import DrinkGrid from "@/components/DrinkGrid";
-import getDrinks from "@/app/services/drinksService"
-export const revalidate = 60;
+"use client"
+import { WishlistContext } from '@/context/WishlistContext';
+import React, { useContext } from 'react'
+import { Drink } from '@/types/drinks';
+import DrinkGrid from '@/components/DrinkGrid';
 
-export default async function MenuPage() {
- const data=await getDrinks()
+function Wishlist() {
+  const { wishlist } = useContext(WishlistContext)!;
 
-  return (
+return (
     <div className="min-h-screen bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
@@ -15,8 +16,10 @@ export default async function MenuPage() {
           <h1 className="text-3xl font-semibold text-gray-900">Our coffee menu</h1>
         </div>
 
-        <DrinkGrid drinks={data} />
+        <DrinkGrid drinks={wishlist} />
       </div>
     </div>
   );
 }
+
+export default Wishlist
